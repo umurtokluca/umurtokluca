@@ -1,0 +1,68 @@
+@font-face {font-family: 'Fira Sans';src: url(FiraSansCondensed-Light.ttf) format('truetype');font-weight: 300;font-style: normal;}
+@font-face {font-family: 'Fira Sans';src: url(FiraSansCondensed-Regular.ttf) format('truetype');font-weight: 400;font-style: normal;}
+@font-face {font-family: 'Fira Sans';src: url(FiraSansCondensed-Medium.ttf) format('truetype');font-weight: 500;font-style: normal;}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+html, body {height: 100%;font-family: 'Fira Sans', Arial, sans-serif;background-color: #1e1e4d;color: #fff;overflow: hidden;}
+body {background-color: transparent;height: 100vh;}
+img, picture, video, canvas, svg {display: block;max-width: 100%;height: auto;}
+button, input, textarea, select {font: inherit;border: none;background: none;outline: none;}
+a {color: inherit;text-decoration: none;}
+ul, ol {list-style: none;}
+h1, h2, h3, h4, h5, h6 {margin: 0;font-size: inherit;font-weight: inherit;}
+:root{
+  --fs-1: .75rem; /*12px*/
+  --fs-2: 1rem; /*16px*/
+  --fs-3: 1.25rem; /*20px*/
+}
+.container {position: absolute;height: 100%;width: 100%;top: 0;left: 0;}
+.flex-container {display: flex;justify-content: space-between;min-height: 100vh;max-width: 1100px;margin: 0 auto;}
+.header-container {width: 48%;padding-top: 8rem;z-index: 2;display: flex;flex-direction: column;padding-bottom: 8rem;justify-content: space-between;}
+.header-title {font-size: 3rem;font-weight: 500;}
+.header-label {font-size: 1.5rem;margin-top: 0.5rem;}
+.header-nav {margin-top: 3rem;}
+.header-menu > li {margin-bottom: 1rem;}
+.header-menu > li > div {opacity: .5;transition: all .3s;cursor: pointer;position:relative;width: fit-content;display: block;}
+.header-menu > li > div:after {content: "";display: block;width: 40px;height: 1px;background-color: #fff;position: absolute;bottom: 4px;left: calc(100% + 10px);transition: all .5s;}
+.header-menu > li > div:hover {opacity: 1;}
+.header-menu > li > div:hover:after {width:60px}
+.header-menu .is-selected {opacity: 1;}
+.header-menu .is-selected:after {width: 60px;}
+.contact-info {display:flex;flex-direction:column;margin-bottom:1rem;}
+.contact-info > a {margin-bottom:1rem}
+.contact-sm {display:flex;}
+.contact-sm > a {opacity:.6;transition: opacity .3s;}
+.contact-sm > a:hover {opacity:1}
+.linkedin, .x, .instagram, .github {display: block;width: 25px;height: 25px;margin-right: 1rem;}
+.linkedin {background: url(../img/logo-linkedin.svg) center / 25px no-repeat;}
+.x {background: url(../img/logo-x.svg) center / 25px no-repeat;}
+.instagram {background: url(../img/logo-instagram.svg) center / 25px no-repeat;}
+.github {background: url(../img/logo-github.svg) center / 25px no-repeat;}
+.main-content {width: 48%;padding-top: 12rem;position: relative;overflow: hidden;overflow-y: scroll;max-height: 100vh;}
+.main-content::-webkit-scrollbar {visibility: hidden;}
+.page {display: none;position: absolute;z-index: 2;}
+.page-title {display:none;font-size:20px;margin-bottom:1.5rem}
+.page p {line-height: 1.5rem;font-weight:300}
+.page.is-selected {display: block;opacity: 1;}
+.project-item {margin-bottom: 2rem;}
+.project-title {font-size: 18px;}
+.project-info {display: flex;justify-content: space-between;margin-top: 1rem;}
+.experience-item {display: flex;margin-bottom: 4rem;justify-content: space-between;}
+.experience-date {width: 20%;font-size: 14px;}
+.experience-info {width: 75%;}
+.experience-info h3 {font-size: 18px;margin-bottom: .3rem;}
+.experience-info span {display:block;font-size:14px;margin-bottom: 1rem;font-weight:300}
+@media (max-width: 1280px) {
+    .flex-container {max-width: 1000px;
+}
+@media (max-width: 1000px) {
+    .flex-container {max-width:none;width:100%;min-height:unset;overflow: scroll;padding: 4rem 2rem;flex-direction:column;max-height: 100vh;}
+    .header-container {padding: 0;width:100%;margin-bottom:4rem;}
+    .header-nav {display:none}
+    .main-content {padding:0;overflow:unset;max-height:none;width:100%}
+    .page {display:block;position:unset;margin-bottom:4rem}
+    .page-title {display:block;}
+    .header {margin-bottom:2rem;}
+}
+@media (max-width: 450px) {
+    .flex-container {padding:4rem 1rem 3rem;}
+}
